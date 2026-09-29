@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SRGNI - Panel Principal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ==========================================
+         MENÚ LATERAL
+    =========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="imagenes/logo.png" alt="SRGNI">
+        </div>
+
+        <div class="user-sidebar">
+
+            <div class="user-avatar" id="sidebarAvatar">
+                U
+            </div>
+
+            <div>
+                <strong id="sidebarUserName">Usuario</strong>
+                <span>Administrador</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button class="sidebar-link active" data-section="inicio-panel">
+                <span class="nav-icon">⌂</span>
+                <span>Inicio</span>
+            </button>
+
+            <button class="sidebar-link" data-section="estudiantes">
+                <span class="nav-icon">👨‍🎓</span>
+                <span>Estudiantes</span>
+            </button>
+
+            <button class="sidebar-link" data-section="docentes">
+                <span class="nav-icon">👨‍🏫</span>
+                <span>Docentes</span>
+            </button>
+
+            <button class="sidebar-link" data-section="asignaturas">
+                <span class="nav-icon">📚</span>
+                <span>Asignaturas</span>
+            </button>
+
+            <button class="sidebar-link" data-section="calificaciones">
+                <span class="nav-icon">📝</span>
+                <span>Calificaciones</span>
+            </button>
+
+            <button class="sidebar-link" data-section="informes">
+                <span class="nav-icon">📊</span>
+                <span>Informes</span>
+            </button>
+
+            <button class="sidebar-link" data-section="notificaciones">
+                <span class="nav-icon">🔔</span>
+                <span>Notificaciones</span>
+
+                <span class="notification-badge" id="notificationBadge">
+                    3
+                </span>
+            </button>
+
+            <button class="sidebar-link" data-section="perfil">
+                <span class="nav-icon">👤</span>
+                <span>Mi perfil</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button class="sidebar-link logout-link" id="logoutButton">
+                <span class="nav-icon">↪</span>
+                <span>Cerrar sesión</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+
+    <main class="dashboard-main">
+
+        <!-- ENCABEZADO -->
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button class="menu-toggle" id="menuToggle">
+                    ☰
+                </button>
+
+                <div>
+                    <span class="dashboard-label">
+                        SISTEMA DE REGISTRO DE NOTAS
+                    </span>
+
+                    <h1 id="sectionTitle">
+                        Panel principal
+                    </h1>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    class="header-notification"
+                    id="notificationButton"
+                    title="Notificaciones">
+
+                    🔔
+
+                    <span id="headerNotificationBadge">
+                        3
+                    </span>
+
+                </button>
+
+
+                <div class="header-user">
+
+                    <div class="header-avatar" id="headerAvatar">
+                        U
+                    </div>
+
+                    <div class="header-user-info">
+
+                        <strong id="headerUserName">
+                            Usuario
+                        </strong>
+
+                        <span>
+                            Administrador
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==========================================
+             CONTENIDO
+        =========================================== -->
+
+        <section class="dashboard-content">
+
+
+            <!-- ======================================
+                 INICIO
+            ======================================= -->
+
+            <div
+                class="dashboard-section active-section"
+                id="inicio-panel">
+
+                <div class="welcome-box">
+
+                    <div>
+
+                        <span class="welcome-tag">
+                            BIENVENIDO A SRGNI
+                        </span>
+
+                        <h2>
+                            Hola,
+                            <span id="welcomeUserName">
+                                Usuario
+                            </span>
+                            👋
+                        </h2>
+
+                        <p>
+                            Desde este panel puedes administrar la
+                            información académica, consultar
+                            calificaciones y generar informes.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-icon">
+                        🎓
+                    </div>
+
+                </div>
+
+
+                <!-- TARJETAS DE RESUMEN -->
+
+                <div class="section-heading">
+
+                    <div>
+                        <span>RESUMEN GENERAL</span>
+
+                        <h2>
+                            Información académica
+                        </h2>
+                    </div>
+
+                    <button
+                        class="refresh-button"
+                        id="refreshData">
+
+                        ↻ Actualizar
+
+                    </button>
+
+                </div>
+
+
+                <div class="summary-grid">
+
+
+                    <!-- ESTUDIANTES -->
+
+                    <article
+                        class="summary-card students-card"
+                        data-section="estudiantes">
+
+                        <div class="summary-icon">
+                            👨‍🎓
+                        </div>
+
+                        <div class="summary-info">
+
+                            <span>
+                                Estudiantes
+                            </span>
+
+                            <strong id="studentsCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Registrados en el sistema
+                            </small>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- DOCENTES -->
+
+                    <article
+                        class="summary-card teachers-card"
+                        data-section="docentes">
+
+                        <div class="summary-icon">
+                            👨‍🏫
+                        </div>
+
+                        <div class="summary-info">
+
+                            <span>
+                                Docentes
+                            </span>
+
+                            <strong id="teachersCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Docentes registrados
+                            </small>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- ASIGNATURAS -->
+
+                    <article
+                        class="summary-card subjects-card"
+                        data-section="asignaturas">
+
+                        <div class="summary-icon">
+                            📚
+                        </div>
+
+                        <div class="summary-info">
+
+                            <span>
+                                Asignaturas
+                            </span>
+
+                            <strong id="subjectsCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Materias disponibles
+                            </small>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </article>
+
+
+                    <!-- CALIFICACIONES -->
+
+                    <article
+                        class="summary-card grades-card"
+                        data-section="calificaciones">
+
+                        <div class="summary-icon">
+                            📝
+                        </div>
+
+                        <div class="summary-info">
+
+                            <span>
+                                Calificaciones
+                            </span>
+
+                            <strong id="gradesCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Registros académicos
+                            </small>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </article>
+
+                </div>
+
+
+                <!-- ==================================
+                     ACCIONES RÁPIDAS
+                =================================== -->
+
+                <div class="dashboard-columns">
+
+                    <div class="dashboard-box">
+
+                        <div class="box-heading">
+
+                            <div>
+                                <span>GESTIÓN</span>
+                                <h3>Acciones rápidas</h3>
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button data-section="estudiantes">
+                                <span>👨‍🎓</span>
+                                Registrar estudiante
+                            </button>
+
+                            <button data-section="docentes">
+                                <span>👨‍🏫</span>
+                                Gestionar docentes
+                            </button>
+
+                            <button data-section="calificaciones">
+                                <span>📝</span>
+                                Registrar calificación
+                            </button>
+
+                            <button data-section="informes">
+                                <span>📊</span>
+                                Generar informe
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACTIVIDAD RECIENTE -->
+
+                    <div class="dashboard-box">
+
+                        <div class="box-heading">
+
+                            <div>
+                                <span>ACTIVIDAD</span>
+                                <h3>Actividad reciente</h3>
+                            </div>
+
+                            <button
+                                class="small-link"
+                                data-section="notificaciones">
+
+                                Ver todo
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="activity-list">
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon">
+                                    📝
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Calificaciones actualizadas
+                                    </strong>
+
+                                    <span>
+                                        Hace 10 minutos
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon">
+                                    👨‍🎓
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Nuevo estudiante registrado
+                                    </strong>
+
+                                    <span>
+                                        Hace 35 minutos
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon">
+                                    📊
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Informe académico generado
+                                    </strong>
+
+                                    <span>
+                                        Hace 1 hora
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 ESTUDIANTES
+            ======================================= -->
+
+            <div
+                class="dashboard-section"
+                id="estudiantes">
+
+                <div class="page-title">
+
+                    <span>GESTIÓN ACADÉMICA</span>
+
+                    <h2>
+                        Estudiantes
+                    </h2>
+
+                    <p>
+                        Registre, consulte y administre la información
+                        académica de los estudiantes.
+                    </p>
+
+                </div>
+
+
+                <div class="management-grid">
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            👨‍🎓
+                        </div>
+
+                        <h3>
+                            Registro de estudiantes
+                        </h3>
+
+                        <p>
+                            Permite registrar nuevos estudiantes
+                            dentro del sistema.
+                        </p>
+
+                        <button class="primary-button">
+                            Registrar estudiante
+                        </button>
+
+                    </div>
+
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            🔎
+                        </div>
+
+                        <h3>
+                            Consultar estudiantes
+                        </h3>
+
+                        <p>
+                            Consulte la información registrada
+                            de los estudiantes.
+                        </p>
+
+                        <button class="secondary-button">
+                            Consultar estudiantes
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 DOCENTES
+            ======================================= -->
+
+            <div
+                class="dashboard-section"
+                id="docentes">
+
+                <div class="page-title">
+
+                    <span>GESTIÓN ACADÉMICA</span>
+
+                    <h2>
+                        Docentes
+                    </h2>
+
+                    <p>
+                        Administre la información de los docentes
+                        y las asignaturas a su cargo.
+                    </p>
+
+                </div>
+
+
+                <div class="management-grid">
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            👨‍🏫
+                        </div>
+
+                        <h3>
+                            Registrar docente
+                        </h3>
+
+                        <p>
+                            Agregue nuevos docentes al sistema SRGNI.
+                        </p>
+
+                        <button class="primary-button">
+                            Registrar docente
+                        </button>
+
+                    </div>
+
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            📋
+                        </div>
+
+                        <h3>
+                            Lista de docentes
+                        </h3>
+
+                        <p>
+                            Consulte y administre los docentes registrados.
+                        </p>
+
+                        <button class="secondary-button">
+                            Ver docentes
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 ASIGNATURAS
+            ======================================= -->
+
+            <div
+                class="dashboard-section"
+                id="asignaturas">
+
+                <div class="page-title">
+
+                    <span>GESTIÓN ACADÉMICA</span>
+
+                    <h2>
+                        Asignaturas
+                    </h2>
+
+                    <p>
+                        Administre las asignaturas disponibles
+                        dentro del sistema.
+                    </p>
+
+                </div>
+
+
+                <div class="management-grid">
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Nueva asignatura
+                        </h3>
+
+                        <p>
+                            Registre una nueva asignatura académica.
+                        </p>
+
+                        <button class="primary-button">
+                            Crear asignatura
+                        </button>
+
+                    </div>
+
+
+                    <div class="management-card">
+
+                        <div class="management-card-icon">
+                            📖
+                        </div>
+
+                        <h3>
+                            Asignaturas registradas
+                        </h3>
+
+                        <p>
+                            Consulte las materias actualmente disponibles.
+                        </p>
+
+                        <button class="secondary-button">
+                            Ver asignaturas
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 CALIFICACIONES
+            ======================================= -->
+
+            <div
+                class="dashboard-section"
+                id="calificaciones">
+
+                <div class="page-title">
+
+                    <span>GESTIÓN ACADÉMICA</span>
+
+                    <h2>
+                        Calificaciones
+                    </h2>
+
+                    <p>
+                        Registre y consulte las calificaciones
+                        de los estudiantes.
+                    </p>
+
+                </div>
+
+
+                <div class="grades-panel">
+
+                    <div class="grades-header">
+
+                        <div>
+                            <h3>
+                                Registro de calificaciones
+                            </h3>
+
+                            <p>
+                                Seleccione una asignatura y un período.
+                            </p>
+                        </div>
+
+                        <button class="primary-button">
+                            + Nueva calificación
+                        </button>
+
+                    </div>
+
+
+                    <div class="fake-table">
+
+                        <div class="table-row table-head">
+
+                            <span>Estudiante</span>
+                            <span>Asignatura</span>
+                            <span>Período</span>
+                            <span>Nota</span>
+
+                        </div>
+
+
+                        <div class="table-row">
+
+                            <span>Juan Pérez</span>
+                            <span>Programación</span>
+                            <span>Periodo 1</span>
+                            <strong>4.5</strong>
+
+                        </div>
+
+
+                        <div class="table-row">
+
+                            <span>María Gómez</span>
+                            <span>Base de Datos</span>
+                            <span>Periodo 1</span>
+                            <strong>4.2</strong>
+
+                        </div>
+
+
+                        <div class="table-row">
+
+                            <span>Carlos Rodríguez</span>
+                            <span>Inglés</span>
+                            <span>Periodo 1</span>
+                            <strong>3.9</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 INFORMES
+            ======================================= -->
+
+            <div
+                class="dashboard-section"
+                id="informes">
+
+                <div class="page-title">
+
+                    <span>REPORTES</span>
+
+                    <h2>
+                        Informes
+                    </h2>
+
+                    <p>
+                        Genere y consulte informes con información
+                        académica organizada.
+                    </p>
+
+                </div>
+
+
+                <div class="reports-grid">
+
+                    <div class="report-card">
+
+                        <span class="report-icon">
+                            📊
+                        </span>
+
+                        <h3>
+                            Rendimiento académico
+                        </h3>
+
+                        <p>
+                            Consulte el rendimiento general de los estudiantes.
+                        </p>
+
+                        <button class="primary-button">
+                            Generar informe
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span class="report-icon">
+                            📈
+                        </span>
+
+                        <h3>
+                            Promedios
+                        </h3>
+
+                        <p>
+                            Consulte los promedios académicos registrados.
+                        </p>
+
+                        <button class="secondary-button">
+                            Consultar
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span class="report-icon">
+                            📄
+                        </span>
+
+                        <h3>
+                            Reporte de calificaciones
+                        </h3>
+
+                        <p>
+                            Genere un reporte general de calificaciones.
+                        </p>
+
+                        <button class="secondary-button">
+                            Generar reporte
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 NOTIFICACIONES
+            ======================================= -->
+
+            <div
+                class="dashboard-section"
+                id="notificaciones">
+
+                <div class="page-title">
+
+                    <span>SISTEMA</span>
+
+                    <h2>
+                        Notificaciones
+                    </h2>
+
+                    <p>
+                        Consulte las novedades y actividades recientes.
+                    </p>
+
+                </div>
+
+
+                <div class="notifications-panel">
+
+                    <div class="notification-item unread">
+
+                        <div class="notification-icon">
+                            🔔
+                        </div>
+
+                        <div>
+                            <strong>
+                                Nuevas calificaciones registradas
+                            </strong>
+
+                            <p>
+                                Se han actualizado nuevas calificaciones.
+                            </p>
+
+                            <small>
+                                Hace 10 minutos
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-item unread">
+
+                        <div class="notification-icon">
+                            👨‍🎓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Nuevo estudiante
+                            </strong>
+
+                            <p>
+                                Se registró un nuevo estudiante.
+                            </p>
+
+                            <small>
+                                Hace 35 minutos
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-icon">
+                            📊
+                        </div>
+
+                        <div>
+                            <strong>
+                                Informe disponible
+                            </strong>
+
+                            <p>
+                                El informe académico está disponible.
+                            </p>
+
+                            <small>
+                                Hace 1 hora
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 PERFIL
+            ======================================= -->
+
+            <div
+                class="dashboard-section"
+                id="perfil">
+
+                <div class="page-title">
+
+                    <span>CUENTA</span>
+
+                    <h2>
+                        Mi perfil
+                    </h2>
+
+                    <p>
+                        Información del usuario que inició sesión.
+                    </p>
+
+                </div>
+
+
+                <div class="profile-panel">
+
+                    <div class="profile-header">
+
+                        <div
+                            class="profile-avatar"
+                            id="profileAvatar">
+
+                            U
+
+                        </div>
+
+                        <div>
+
+                            <h3 id="profileName">
+                                Usuario
+                            </h3>
+
+                            <span>
+                                Administrador
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-data">
+
+                        <div>
+                            <span>Usuario</span>
+                            <strong id="profileUsername">
+                                usuario
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Rol</span>
+                            <strong>
+                                Administrador
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Estado</span>
+                            <strong class="status-active">
+                                Activo
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Sistema</span>
+                            <strong>
+                                SRGNI
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             FOOTER
+        =========================================== -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © <span id="dashboardYear"></span>
+                SRGNI - Sistema de Registro de Notas
+            </p>
+
+            <span>
+                Gestión académica
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ==========================================
+         MODAL DE NOTIFICACIONES
+    =========================================== -->
+
+    <div
+        class="notification-modal"
+        id="notificationModal">
+
+        <div class="notification-modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <span>SRGNI</span>
+
+                    <h3>
+                        Notificaciones
+                    </h3>
+                </div>
+
+                <button id="closeNotificationModal">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="modal-notification">
+
+                <span>🔔</span>
+
+                <div>
+                    <strong>
+                        Nuevas calificaciones
+                    </strong>
+
+                    <p>
+                        Se han registrado nuevas calificaciones.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="modal-notification">
+
+                <span>👨‍🎓</span>
+
+                <div>
+                    <strong>
+                        Nuevo estudiante
+                    </strong>
+
+                    <p>
+                        Hay un nuevo estudiante registrado.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="modal-notification">
+
+                <span>📊</span>
+
+                <div>
+                    <strong>
+                        Informe generado
+                    </strong>
+
+                    <p>
+                        Se generó un nuevo informe académico.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button modal-button"
+                id="markNotifications">
+
+                Marcar como leídas
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="scrip.js"></script>
+
+</body>
+
+</html>
